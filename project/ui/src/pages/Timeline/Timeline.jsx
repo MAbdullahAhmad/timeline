@@ -17,6 +17,7 @@ export default function Timeline() {
         component="header"
         id="Timeline-header"
         sx={{
+          flex: '0 0 auto',
           borderBottom: '2px solid',
           borderColor: 'primary.main',
           p: 1
@@ -34,9 +35,9 @@ export default function Timeline() {
         component="main"
         id="Timeline-body"
         sx={{
-          flexGrow: '1',
+          flex: '1 1 0',
           display: 'flex',
-          flexFlow: 'row',
+          flexFlow: 'column',
           alignItems: 'stretch',
         }}
       >

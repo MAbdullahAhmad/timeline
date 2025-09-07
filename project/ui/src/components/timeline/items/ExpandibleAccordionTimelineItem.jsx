@@ -1,26 +1,30 @@
 import React, { useState, lazy, Suspense } from 'react';
+
 import {
   Typography, Chip, Box
 } from '@mui/material';
-// import Timeline from '../Timeline';
-import ParentsBreadcrumb from '../../misc/Breadcrumb/Breadcrumb';
 import KeyboardReturnIcon from '@mui/icons-material/KeyboardReturn';
-
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import { CircularProgress } from '@mui/material';
+import Collapse from '@mui/material/Collapse';
+
+import ParentsBreadcrumb from '../../misc/Breadcrumb/Breadcrumb';
+import AttachCircle from '../AttachCircle/AttachCircle';
 
 const LazyTimeline = lazy(() => import('../Timeline'));
 
 export default function ExpandibleAccordionTimelineItem({
-  title, note, category, categoryColor, desc, img, url, children, parents, date, level
+  title, note, category, categoryColor, desc, img, url, children, parents, date, level, attach
 }) {
 
   const [showChildren, setShowChildren] = useState(false);
 
   return (
     <Box sx={{ mt: 2, p: 2, border: '1px solid', borderColor: 'primary.main' }}>
+
+      {attach && <AttachCircle/>}
 
       {/* Topbar */}
       <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 1 }}>
@@ -162,12 +166,14 @@ export default function ExpandibleAccordionTimelineItem({
       )}
 
       {/* Lazy accordion content */}
-      {showChildren && children && children.length > 0 && (
-        <Box sx={{ ml: 1.5, mt: 0, pl: 2, borderLeft: '1px solid', borderColor: 'primary.main' }}>
-          <Suspense fallback={<CircularProgress size={16} />}>
-            <LazyTimeline items={children} child level={level ? level+1 : 1 } />
-          </Suspense>
-        </Box>
+      {children && children.length > 0 && (
+        <Collapse in={showChildren} timeout={500} mountOnEnter unmountOnExit>
+          <Box sx={{ ml: 1.5, mt: 0, pl: 2, borderLeft: '1px solid', borderColor: 'primary.main' }}>
+            <Suspense fallback={<CircularProgress size={16} />}>
+              <LazyTimeline items={children} child level={level ? level+1 : 1 } />
+            </Suspense>
+          </Box>
+        </Collapse>
       )}
 
     </Box>

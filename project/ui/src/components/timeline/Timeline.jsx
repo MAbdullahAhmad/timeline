@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { Box, IconButton } from '@mui/material';
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import { Box } from '@mui/material';
 
 import ExpandibleAccordionTimelineItem from './items/ExpandibleAccordionTimelineItem.jsx';
 
-export default function TimelineView({ items = [], child = false, level=1 }) {
+export default function Timeline({ items = [], child = false, level=1 }) {
   const [openAside, setOpenAside] = useState(true);
 
   return (
@@ -12,22 +11,24 @@ export default function TimelineView({ items = [], child = false, level=1 }) {
       sx={{
         display: 'flex',
         flexDirection: 'row',
-        overflow: 'hidden',
-        flexGrow: 1,
+        overflow: 'scroll',
+        flex: '1 1 0',
       }}
     >
       {/* Main content (75% or 100% if child=true or aside closed) */}
       <Box
         sx={{
           flex: child ? '1 1 100%' : openAside ? '1 1 75%' : '1 1 100%',
+          alignItems: 'stretch',
           // transition: 'flex 0.3s ease',
           p: child ? 0 : 2,
           position: 'relative',
+          // overflowY: 'scroll',
         }}
       >
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
           {items.map((item, idx) => (
-            <ExpandibleAccordionTimelineItem key={idx} level={level} {...item} />
+            <ExpandibleAccordionTimelineItem key={idx} level={level} attach={!child && openAside} {...item} />
           ))}
         </Box>
 
@@ -46,7 +47,8 @@ export default function TimelineView({ items = [], child = false, level=1 }) {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              '&:hover': { opacity: 0.8 }
+              '&:hover': { opacity: 0.8 },
+              zIndex: 2
             }}
           >
             <Box
@@ -73,7 +75,9 @@ export default function TimelineView({ items = [], child = false, level=1 }) {
             borderLeft: openAside ? '2px solid' : 'none',
             borderColor: 'primary.main',
             // transition: 'flex 0.3s ease, border 0.3s ease',
-            overflow: 'hidden'
+            overflow: 'hidden',
+            position: 'sticky',
+            top: 0,
           }}
         >
           Timeline:<br/>
