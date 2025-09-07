@@ -1,9 +1,9 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
 import tl_items from '@dist/timeline.json';
-import TimelineView from '@/components/timeline/Timeline.jsx';
+import Timeline from '@/components/timeline/Timeline.jsx';
 
-export default function Timeline() {
+export default function App() {
   return (
     <Box sx={{
       minHeight: '100vh',
@@ -15,7 +15,6 @@ export default function Timeline() {
       {/* ------ */}
       <Box
         component="header"
-        id="Timeline-header"
         sx={{
           flex: '0 0 auto',
           borderBottom: '2px solid',
@@ -33,7 +32,6 @@ export default function Timeline() {
       {/* ------ */}
       <Box
         component="main"
-        id="Timeline-body"
         sx={{
           flex: '1 1 0',
           display: 'flex',
@@ -41,7 +39,7 @@ export default function Timeline() {
           alignItems: 'stretch',
         }}
       >
-        <TimelineView items={tl_items} />
+        <Timeline items={tl_items} />
       </Box>
     </Box>
   );

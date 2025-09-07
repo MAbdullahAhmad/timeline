@@ -1,9 +1,9 @@
 import Welcome from "@/pages/Welcome/Welcome";
-import Timeline from "@/pages/Timeline/Timeline";
+import App from "@/pages/App/App";
 
 const guest_routes = {
   "/": Welcome,
-  "/timeline": Timeline,
+  "/app": App,
 };
 
 export default guest_routes;

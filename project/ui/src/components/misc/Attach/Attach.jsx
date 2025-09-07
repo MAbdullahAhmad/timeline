@@ -1,8 +1,8 @@
-// RightEdgeSticky.jsx
 import React from 'react';
 import { Box } from '@mui/material';
 
-export default function RightEdgeSticky({ children, top = 50, offset = 8, z = 100 }) {
+
+export default function Attach({ children, top = 50, offset = 8, z = 100 }) {
   return (
     <Box
       sx={{
@@ -12,7 +12,8 @@ export default function RightEdgeSticky({ children, top = 50, offset = 8, z = 10
         width: 'max-content',
         ml: 'auto',              // push to parent's right edge
         transform: `translateX(${offset}px)`, // nudge outside component
-        zIndex: z
+        zIndex: z,
+        height: 0,
       }}
     >
       {children}
