@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
 import tl_items from '@dist/timeline.json';
-import Timeline from '@/components/timeline/Timeline.jsx';
+import Timeline from '@/components/Timeline/Timeline';
 
 export default function App() {
   return (

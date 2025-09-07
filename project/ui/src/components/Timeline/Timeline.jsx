@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Box } from '@mui/material';
 
-import ExpandibleAccordionTimelineItem from './items/ExpandibleAccordionTimelineItem/ExpandibleAccordionTimelineItem.jsx';
-import ExpandButton from '../misc/ExpandButton/ExpandButton.jsx';
-import TimeAside from './TimeAside/TimeAside.jsx';
+import ExpandibleAccordionTimelineItem from '@/components/ExpandibleAccordionTimelineItem/ExpandibleAccordionTimelineItem';
+import ExpandButton from '@/components/misc/ExpandButton/ExpandButton';
+import TimeAside from '@/components/TimeAside/TimeAside';
 
 export default function Timeline({ items = [], child = false, level=1 }) {
   const [openAside, setOpenAside] = useState(true);
