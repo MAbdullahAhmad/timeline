@@ -1,21 +1,58 @@
-import React from 'react';
-import { Box } from '@mui/material';
+import React from "react";
+import { Box } from "@mui/material";
 
-export default function TimeAside({ open }) {
+import DatePart from "@/components/DatePart/DatePart";
+import date_2_dmy from "@/util/functions/date_2_dmy";
+
+// const Part = ({ children }) => (
+//   <Box
+//     sx={{
+//       px: 1,
+//       py: 0.5,
+//       bgcolor: "background.default",
+//       color: "primary.main",
+//       borderRadius: 1,
+//       fontSize: 12,
+//       lineHeight: 1,
+//       userSelect: "none",
+//       whiteSpace: "nowrap",
+//     }}
+//   >
+//     {children}
+//   </Box>
+// );
+
+export default function TimeAside({ open, date }) {
+  const { day, month, year } = date_2_dmy(date);
+
   return (
     <Box
       sx={{
-        flex: open ? '1 1 25%' : '0 0 0%',
-        borderLeft: open ? '2px solid' : 'none',
-        borderColor: 'primary.main',
-        // transition: 'flex 0.3s ease, border 0.3s ease',
-        overflow: 'hidden',
-        position: 'sticky',
+        flex: open ? "1 1 25%" : "0 0 0%",
+        borderLeft: open ? "2px solid" : "none",
+        borderColor: "primary.main",
+        overflow: "hidden",
+        position: "sticky",
         top: 0,
+        opacity: open ? 1 : 0,
       }}
     >
-      Timeline:<br/>
-      Under development.
+      {/* Fixed date display (same styling/spacing as DatePin) */}
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          gap: 1.5,
+          ml: '5px',
+          mt: '52px',
+          width: "calc(25vw - 20px)",
+        }}
+      >
+        <DatePart>{day}</DatePart>
+        <DatePart>{month}</DatePart>
+        <DatePart>{year}</DatePart>
+      </Box>
     </Box>
   );
 }

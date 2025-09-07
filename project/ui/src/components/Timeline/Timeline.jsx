@@ -9,6 +9,8 @@ export default function Timeline({ items = [], child = false, level=1 }) {
   const [openAside, setOpenAside] = useState(true);
   const root = !child;
 
+  const [date, setDate] = useState(new Date());
+
   return (
     <Box
       sx={{
@@ -37,7 +39,7 @@ export default function Timeline({ items = [], child = false, level=1 }) {
       </Box>
 
       {/* Aside panel (hidden if child=true) */}
-      {root && openAside && <TimeAside open={openAside} />}
+      {root && openAside && <TimeAside open={openAside} date={date} />}
     </Box>
   );
 }

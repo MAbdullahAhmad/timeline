@@ -1,22 +1,22 @@
 import React from 'react';
 
 import { Box} from '@mui/material';
-import AttachCircle from '@/components/misc/AttachCircle/AttachCircle';
 
-import Children from './components/Children';
-import Content from './components/Content';
+import DatePin from './components/DatePin';
 import Topbar from './components/Topbar';
+import Content from './components/Content';
+import Children from './components/Children';
 
 
 export default function ExpandibleAccordionTimelineItem({
-  title, note, category, categoryColor, desc, img, url, children, parents, date, level, attach
+  title, note, category, categoryColor, desc, img, url, children, parents, date, shift, level, attach
 }) {
 
   return (
     <Box sx={{ mt: 2, p: 2, border: '1px solid', borderColor: 'primary.main' }}>
 
-      {/* Sticky Attachment */}
-      {attach && <AttachCircle/>}
+      {/* Sticky DatePin */}
+      { attach && <DatePin date={date} shift={shift}/>}
 
       {/* Topbar */}
       <Topbar {...{parents, children, date, category, categoryColor}}/>

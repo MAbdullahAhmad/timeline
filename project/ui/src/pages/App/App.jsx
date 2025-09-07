@@ -1,9 +1,13 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
-import tl_items from '@dist/timeline.json';
 import Timeline from '@/components/Timeline/Timeline';
 
+import map_date_shift from '@/util/functions/map_date_shift';
+import timeline_items from '@dist/timeline.json';
+
 export default function App() {
+  const tl_items = timeline_items.map(map_date_shift);
+  
   return (
     <Box sx={{
       minHeight: '100vh',
