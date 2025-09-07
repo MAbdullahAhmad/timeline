@@ -10,59 +10,56 @@ export default function Timeline({ items = [], child = false, level=1 }) {
 
   const scrollRef = useRef(null);
   const itemRefs = useRef([]);
-  const offsetsRef = useRef([]);
 
   const [openAside, setOpenAside] = useState(true);
   const [date, setDate] = useState(new Date());
 
-  // Cache offsets (recompute on deps change)
-  const recomputeOffsets = useCallback(() => {
-    const el = scrollRef.current;
-    if (!el) return [];
-    const offsets = itemRefs.current.map((n) => (n ? n.offsetTop : 0));
-    return offsets;
-  }, []);
+  const ioRef = useRef(null);
 
   useEffect(() => {
-    offsetsRef.current = recomputeOffsets();
-  }, [recomputeOffsets, items, openAside]);
+    if (!root) return;
 
-  useEffect(() => {
-    const onResize = () => (offsetsRef.current = recomputeOffsets());
-    window.addEventListener("resize", onResize);
-    return () => window.removeEventListener("resize", onResize);
-  }, [recomputeOffsets]);
+    const rootEl = scrollRef.current;
+    if (!rootEl) return;
+    
+    const obs = new IntersectionObserver(
+      (entries) => {
+        // pick the visible item closest to the top (after the 25px line)
+        const topMost = entries
+          .filter(e => e.isIntersecting)
+          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
+        if (topMost) {
+          const idx = Number(topMost.target.dataset.idx);
+          const d = new Date(items[idx]?.date);
+          if (!Number.isNaN(d.getTime())) setDate(d);
+        }
+      },
+      {
+        root: rootEl,
+        rootMargin: "0px 0px -100% 0px", // trigger near the top line
+        threshold: 0
+      }
+    );
 
-  const onScroll = () => {
-    // Parent scrolltop
-    const sc = scrollRef.current;
-    if (!sc || items.length === 0) return;
-    const threshold = sc.scrollTop + 25;
+    ioRef.current = obs;
+    itemRefs.current.forEach(el => el && obs.observe(el));
+    return () => obs.disconnect();
 
-    // Current item (via offsets)
-    const offs = offsetsRef.current;
-    let idx = 0;
-    for (let i = 0; i < offs.length; i++) {
-      if (offs[i] <= threshold) idx = i;
-      else break;
-    }
+  }, [items, openAside, root]);
 
-    // Get Current Date
-    const d = new Date(items[idx]?.date);
-    if (!Number.isNaN(d.getTime())) setDate(d);
-  };
-
-  itemRefs.current = useMemo(() => Array(items.length).fill(null), [items.length]);
+  itemRefs.current = useMemo(
+    () => (root ? Array(items.length).fill(null) : []),
+    [items.length, root]
+  );
 
   return (
     <Box
-      ref={scrollRef}
-      onScroll={onScroll}
+      ref={root ? scrollRef : null}
       sx={{
         display: 'flex',
         flexDirection: 'row',
-        overflow: 'scroll',
         flex: '1 1 0',
+        ...(root && { overflowY: 'auto' })
       }}
     >
       {/* Main content (75% or 100% if child=true or aside closed) */}
@@ -80,7 +77,10 @@ export default function Timeline({ items = [], child = false, level=1 }) {
               key={idx}
               level={level}
               attach={root && openAside}
-              ref={(el) => (itemRefs.current[idx] = el)}
+              ref={(el) => {
+                itemRefs.current[idx] = el;
+                if (el) el.dataset.idx = String(idx); // for lookup in IO callback
+              }}
               {...item}
             />
           ))}

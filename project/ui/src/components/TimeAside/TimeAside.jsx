@@ -4,24 +4,6 @@ import { Box } from "@mui/material";
 import DatePart from "@/components/DatePart/DatePart";
 import date_2_dmy from "@/util/functions/date_2_dmy";
 
-// const Part = ({ children }) => (
-//   <Box
-//     sx={{
-//       px: 1,
-//       py: 0.5,
-//       bgcolor: "background.default",
-//       color: "primary.main",
-//       borderRadius: 1,
-//       fontSize: 12,
-//       lineHeight: 1,
-//       userSelect: "none",
-//       whiteSpace: "nowrap",
-//     }}
-//   >
-//     {children}
-//   </Box>
-// );
-
 export default function TimeAside({ open, date }) {
   const { day, month, year } = date_2_dmy(date);
 
