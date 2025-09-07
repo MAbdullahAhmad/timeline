@@ -10,14 +10,13 @@ export default function DatePart({ children }){
         bgcolor: "background.default",
         color: "primary.main",
         borderRadius: 1,
-        fontSize: 12,
         lineHeight: 1,
         userSelect: "none",
         whiteSpace: "nowrap",
       }}
     >
       <Typography sx={{
-        fontSize: 18,
+        fontSize: 22,
         fontWeight:'bold',
         lineHeight: '10px'
       }}>

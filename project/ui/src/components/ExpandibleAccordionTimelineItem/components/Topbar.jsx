@@ -6,6 +6,7 @@ import {
 
 import KeyboardReturnIcon from '@mui/icons-material/KeyboardReturn';
 import ParentsBreadcrumb from '@/components/misc/Breadcrumb/Breadcrumb';
+import date_2_dmy from '@/util/functions/date_2_dmy';
 
 export default function Topbar({
   parents, children, date, category, categoryColor
@@ -34,7 +35,7 @@ export default function Topbar({
 
           {date && (
             <Typography sx={{ fontSize: 10, fontWeight: 'bold', color: 'text.primary' }}>
-              {date.toDateString().slice(8,10) + ' ' + date.toLocaleString('en',{month:'short'}) + ' ' + date.getFullYear().toString().slice(-2)}
+              {Object.values(date_2_dmy(new Date(date))).join(' ')}
             </Typography>
           )}
         </Box>
