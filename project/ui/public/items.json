@@ -1,0 +1,111 @@
+[
+  {
+    "id": 11,
+    "title": "Timeline",
+    "category": "Project",
+    "note": "A tool to showcase your work",
+    "desc": "Created a local-app to showcase a history of achivements including projects, skills and events in form of nested cards with timeline updating for each card upon scroll.",
+    "date": "1 Sep, 25",
+    "children": [],
+    "level": 0
+  },
+  {
+    "id": 12,
+    "title": "Learnt Containerization and Orchestration",
+    "category": "Study",
+    "note": "Using containers for quick and scalable deployment.",
+    "desc": "End-to-end containerization & orchestration: built images with multi-stage Dockerfiles, used Compose for multi-service dev, then deployed a sample stack on Kubernetes (Pods, Deployments, Services) with CI building/pushing images.",
+    "img": "https://ctf-cci-com.imgix.net/7cbTebjb42sBv14Vsp27TZ/e1d5577ad8c8d2632950cb78a25fe74a/rba-docker-Image.jpg?ixlib=rb-3.2.1&w=2000&auto=format&fit=max&q=60",
+    "date": "19 Jun, 25",
+    "children": [13, 14],
+    "level": 0
+  },
+  {
+    "id": 13,
+    "title": "Docker Containers",
+    "category": "Study",
+    "note": "Docker containers",
+    "desc": "Packaged apps into Docker images, optimized with multi-stage builds, managed env vars/volumes/networks, and ran local stacks via docker-compose (API + DB).",
+    "img": "https://www.pedroalonso.net/static/b3ec2afb11130f982251a7282ede99f2/dac54/docker-thumb.jpg",
+    "date": "20 Feb, 25",
+    "children": [],
+    "level": 1
+  },
+  {
+    "id": 14,
+    "title": "Kubernetes",
+    "category": "Study",
+    "note": "Kubernetes",
+    "desc": "Ran the stack on Kubernetes: Deployments & Services with Ingress, ConfigMaps/Secrets, basic autoscaling (HPA), and rollout/health checks using kubectl and logs.",
+    "img": "https://a.storyblok.com/f/189401/1080x608/daa7ee5484/what_is_k8s.png",
+    "date": "6 May, 25",
+    "children": [],
+    "level": 1
+  },
+  {
+    "id": 15,
+    "title": "Learnt Containerization and Orchestration",
+    "category": "Study",
+    "note": "Using containers for quick and scalable deployment.",
+    "desc": "End-to-end containerization & orchestration: built images with multi-stage Dockerfiles, used Compose for multi-service dev, then deployed a sample stack on Kubernetes (Pods, Deployments, Services) with CI building/pushing images.",
+    "img": "https://ctf-cci-com.imgix.net/7cbTebjb42sBv14Vsp27TZ/e1d5577ad8c8d2632950cb78a25fe74a/rba-docker-Image.jpg?ixlib=rb-3.2.1&w=2000&auto=format&fit=max&q=60",
+    "date": "10 Jan, 25",
+    "children": [],
+    "level": 0
+  },
+  {
+    "id": 16,
+    "title": "Learnt Containerization and Orchestration",
+    "category": "Study",
+    "note": "Using containers for quick and scalable deployment.",
+    "desc": "End-to-end containerization & orchestration: built images with multi-stage Dockerfiles, used Compose for multi-service dev, then deployed a sample stack on Kubernetes (Pods, Deployments, Services) with CI building/pushing images.",
+    "img": "https://ctf-cci-com.imgix.net/7cbTebjb42sBv14Vsp27TZ/e1d5577ad8c8d2632950cb78a25fe74a/rba-docker-Image.jpg?ixlib=rb-3.2.1&w=2000&auto=format&fit=max&q=60",
+    "date": "08 Jan, 25",
+    "children": [],
+    "level": 0
+  },
+  {
+    "id": 17,
+    "title": "Learnt Containerization and Orchestration",
+    "category": "Study",
+    "note": "Using containers for quick and scalable deployment.",
+    "desc": "End-to-end containerization & orchestration: built images with multi-stage Dockerfiles, used Compose for multi-service dev, then deployed a sample stack on Kubernetes (Pods, Deployments, Services) with CI building/pushing images.",
+    "img": "https://ctf-cci-com.imgix.net/7cbTebjb42sBv14Vsp27TZ/e1d5577ad8c8d2632950cb78a25fe74a/rba-docker-Image.jpg?ixlib=rb-3.2.1&w=2000&auto=format&fit=max&q=60",
+    "date": "22 Oct, 24",
+    "children": [],
+    "level": 0
+  },
+  {
+    "id": 18,
+    "title": "Learnt Containerization and Orchestration",
+    "category": "Study",
+    "note": "Using containers for quick and scalable deployment.",
+    "desc": "End-to-end containerization & orchestration: built images with multi-stage Dockerfiles, used Compose for multi-service dev, then deployed a sample stack on Kubernetes (Pods, Deployments, Services) with CI building/pushing images.",
+    "img": "https://ctf-cci-com.imgix.net/7cbTebjb42sBv14Vsp27TZ/e1d5577ad8c8d2632950cb78a25fe74a/rba-docker-Image.jpg?ixlib=rb-3.2.1&w=2000&auto=format&fit=max&q=60",
+    "date": "31 Aug, 24",
+    "children": [],
+    "level": 0
+  },
+  {
+    "id": 19,
+    "title": "Learnt Containerization and Orchestration",
+    "category": "Study",
+    "note": "Using containers for quick and scalable deployment.",
+    "desc": "End-to-end containerization & orchestration: built images with multi-stage Dockerfiles, used Compose for multi-service dev, then deployed a sample stack on Kubernetes (Pods, Deployments, Services) with CI building/pushing images.",
+    "img": "https://ctf-cci-com.imgix.net/7cbTebjb42sBv14Vsp27TZ/e1d5577ad8c8d2632950cb78a25fe74a/rba-docker-Image.jpg?ixlib=rb-3.2.1&w=2000&auto=format&fit=max&q=60",
+    "date": "10 Mar, 24",
+    "children": [],
+    "level": 0
+  },
+  {
+    "id": 20,
+    "title": "Learnt Containerization and Orchestration",
+    "category": "Study",
+    "note": "Using containers for quick and scalable deployment.",
+    "desc": "End-to-end containerization & orchestration: built images with multi-stage Dockerfiles, used Compose for multi-service dev, then deployed a sample stack on Kubernetes (Pods, Deployments, Services) with CI building/pushing images.",
+    "img": "https://ctf-cci-com.imgix.net/7cbTebjb42sBv14Vsp27TZ/e1d5577ad8c8d2632950cb78a25fe74a/rba-docker-Image.jpg?ixlib=rb-3.2.1&w=2000&auto=format&fit=max&q=60",
+    "date": "03 Mar, 24",
+    "children": [],
+    "level": 0
+  }
+]

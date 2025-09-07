@@ -1,20 +1,31 @@
-import React, { useState, useRef, useEffect, useCallback, useMemo } from 'react';
+import React, { useState, useRef, useEffect, useMemo } from 'react';
 import { Box } from '@mui/material';
+
+import { useSelector } from 'react-redux';
+import { selectRoots, selectChildren } from '@/store/timelineSlice';
+import map_date_shift from '@/util/functions/map_date_shift';
 
 import ExpandibleAccordionTimelineItem from '@/components/ExpandibleAccordionTimelineItem/ExpandibleAccordionTimelineItem';
 import ExpandButton from '@/components/misc/ExpandButton/ExpandButton';
 import TimeAside from '@/components/TimeAside/TimeAside';
 
-export default function Timeline({ items = [], child = false, level=1 }) {
+export default function Timeline({ focusId = null, child = false, level = 1 }) {
   const root = !child;
 
   const scrollRef = useRef(null);
   const itemRefs = useRef([]);
+  const ioRef = useRef(null);
 
   const [openAside, setOpenAside] = useState(true);
   const [date, setDate] = useState(new Date());
 
-  const ioRef = useRef(null);
+  const selector = useMemo(() => {
+    return focusId != null ? selectChildren(focusId) : selectRoots;
+  }, [focusId]);
+  
+  const storeItems = useSelector(selector);
+  const items = useMemo(() => storeItems.map(map_date_shift), [storeItems]);
+
 
   useEffect(() => {
     if (!root) return;

@@ -8,9 +8,12 @@ import Children from './components/Children';
 
 export default forwardRef(
   function ExpandibleAccordionTimelineItem(
-    {title, note, category, categoryColor, desc, img, url, children, parents, date, shift, level, attach,},
+    {id, title, note, category, categoryColor, desc, img, children, parents, date, shift, level, attach,},
     ref
   ) {
+
+    const url = `/app/${id}`;
+
     return (
       <Box ref={ref} sx={{ mt: 2, p: 2, border: '1px solid', borderColor: 'primary.main' }}>
 
@@ -24,7 +27,7 @@ export default forwardRef(
         <Content {...{title, img, note, desc}}/>
 
         {/* Children */}
-        <Children {...{children, level}}/>
+        <Children {...{id, children, level, url}}/>
 
       </Box>
     );

@@ -7,11 +7,12 @@ import {
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
+import { unwrapResult } from '@reduxjs/toolkit';
 
 const LazyTimeline = lazy(() => import('@/components/Timeline/Timeline'));
 
 export default function Children({
-  children, level
+  id, children, level, url='/app'
 }){
   const [showChildren, setShowChildren] = useState(false);
 
@@ -39,7 +40,7 @@ export default function Children({
 
           <Box
             component="a"
-            href="https://example.com"
+            href={url}
             target="_blank"
             rel="noopener noreferrer"
             sx={{
@@ -66,7 +67,7 @@ export default function Children({
         <Collapse in={showChildren} timeout={500} mountOnEnter unmountOnExit>
           <Box sx={{ ml: 1.5, mt: 0, pl: 2, borderLeft: '1px solid', borderColor: 'primary.main' }}>
             <Suspense fallback={<CircularProgress size={16} />}>
-              <LazyTimeline items={children} child level={level ? level+1 : 1 } />
+              <LazyTimeline focusId={id} level={level ? level+1 : 1 } child />
             </Suspense>
           </Box>
         </Collapse>
