@@ -9,11 +9,12 @@ import Children from './components/Children';
 
 
 export default function ExpandibleAccordionTimelineItem({
-  title, note, category, categoryColor, desc, img, url, children, parents, date, shift, level, attach
+  title, note, category, categoryColor, desc, img, url, children, parents, date, shift, level, attach,
+  ref,
 }) {
 
   return (
-    <Box sx={{ mt: 2, p: 2, border: '1px solid', borderColor: 'primary.main' }}>
+    <Box ref={ref} sx={{ mt: 2, p: 2, border: '1px solid', borderColor: 'primary.main' }}>
 
       {/* Sticky DatePin */}
       { attach && <DatePin date={date} shift={shift}/>}
