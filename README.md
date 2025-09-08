@@ -9,4 +9,5 @@ This tool is under development.
 
 Once phase one is developed, first release shall be made for anyone to use.
 
-## LISENCE
+## License
+Timeline is released under the **Timeline Attribution License (TAL) v1.0** — see [LICENSE](./LICENSE).
