@@ -29,19 +29,24 @@ export default function App() {
             borderBottom: '2px solid',
             borderColor: 'primary.main',
             p: 1,
+          }}
+        >
+          <Typography component="a" href="https://github.com/MAbdullahAhmad/timeline" target="_blank" sx={{
+            textDecoration: 'none',
             display: 'flex',
             alignItems: 'center',
             gap: 1,
-          }}
-        >
-          <Box
-            component="img"
-            src="/timeline.svg"
-            alt="logo"
-            sx={{ width: 28, height: 28 }}
-          />
-          <Typography variant="h4" color="primary.main" fontWeight="bold" m="0">
-            Timeline
+            userSelect: 'none'
+          }}>
+            <Box
+              component="img"
+              src="/timeline.svg"
+              alt="logo"
+              sx={{ width: 28, height: 28 }}
+            />
+            <Typography variant="h4" color="primary.main" fontWeight="bold" m="0">
+              Timeline
+            </Typography>
           </Typography>
         </Box>
 

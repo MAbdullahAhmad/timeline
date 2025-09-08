@@ -129,6 +129,7 @@ export default function IntroAnimation() {
         alignItems: "center",
         justifyContent: "center",
         gap: "32px",
+        userSelect: 'none'
       }}
     >
       <img
