@@ -16,6 +16,7 @@
     "note": "Using containers for quick and scalable deployment.",
     "desc": "End-to-end containerization & orchestration: built images with multi-stage Dockerfiles, used Compose for multi-service dev, then deployed a sample stack on Kubernetes (Pods, Deployments, Services) with CI building/pushing images.",
     "img": "https://ctf-cci-com.imgix.net/7cbTebjb42sBv14Vsp27TZ/e1d5577ad8c8d2632950cb78a25fe74a/rba-docker-Image.jpg?ixlib=rb-3.2.1&w=2000&auto=format&fit=max&q=60",
+    "img_link": "https://example.com",
     "date": "19 Jun, 25",
     "children": [13, 14],
     "level": 0

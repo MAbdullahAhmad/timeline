@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect, useMemo } from 'react';
 import { Box } from '@mui/material';
 
-import { useSelector } from 'react-redux';
-import { selectRoots, selectChildren } from '@/store/timelineSlice';
+import { useSelector, useDispatch } from 'react-redux';
+import { selectRoots, selectChildren, loadChildren } from '@/store/timelineSlice';
 import map_date_shift from '@/util/functions/map_date_shift';
 
 import ExpandibleAccordionTimelineItem from '@/components/ExpandibleAccordionTimelineItem/ExpandibleAccordionTimelineItem';
@@ -16,8 +16,14 @@ export default function Timeline({ focusId = null, child = false, level = 1 }) {
   const itemRefs = useRef([]);
   const ioRef = useRef(null);
 
+  const dispatch = useDispatch();
+
   const [openAside, setOpenAside] = useState(true);
   const [date, setDate] = useState(new Date());
+
+  useEffect(() => {
+    if (focusId != null) dispatch(loadChildren(focusId));
+  }, [focusId, dispatch]);
 
   const selector = useMemo(() => {
     return focusId != null ? selectChildren(focusId) : selectRoots;

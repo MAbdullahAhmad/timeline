@@ -13,6 +13,8 @@ export default function DatePart({ children }){
         lineHeight: 1,
         userSelect: "none",
         whiteSpace: "nowrap",
+        // paddingBottom: '39px',
+        // marginBottom: '-39px'
       }}
     >
       <Typography sx={{

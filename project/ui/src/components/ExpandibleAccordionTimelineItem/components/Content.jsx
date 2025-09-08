@@ -5,7 +5,7 @@ import {
 } from '@mui/material';
 
 export default function Content({
-  title, img, note, desc
+  title, img, img_link, note, desc
 }){
   return (
     <Box sx={{ display: 'flex', gap: 2 }}>
@@ -45,7 +45,8 @@ export default function Content({
             component="img"
             src={img}
             alt={title || 'image'}
-            sx={{ width: '100%', height: 'auto', objectFit: 'contain', m: 1 }}
+            sx={{ width: '100%', height: 'auto', objectFit: 'contain', m: 1, cursor: img_link ? 'pointer': 'normal' }}
+            onClick={img_link ? () => window.open(img_link, '_blank') : null}
           />
         </Box>
       )}

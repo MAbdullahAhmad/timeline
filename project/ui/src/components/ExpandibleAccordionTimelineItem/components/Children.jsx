@@ -7,7 +7,6 @@ import {
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
-import { unwrapResult } from '@reduxjs/toolkit';
 
 const LazyTimeline = lazy(() => import('@/components/Timeline/Timeline'));
 
