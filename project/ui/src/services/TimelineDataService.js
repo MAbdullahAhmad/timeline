@@ -46,6 +46,7 @@ class TimelineDataService {
       if (p && (await p.check?.())) {
         this.provider = p;
         this.method = key;
+        // console.log("Method", this.method);
         return;
       }
     }

@@ -44,7 +44,10 @@ export default function Topbar({
           <Box
             sx={{
               bgcolor: categoryColor || 'primary.main',
-              color: categoryColor ? categoryColor : 'background.default',
+              color: (theme) =>
+                theme.palette.getContrastText(categoryColor || theme.palette.primary.main) === theme.palette.common.white
+                  ? theme.palette.primary.main
+                  : theme.palette.background.default,
               height: 20,
               px: 1,
               display: 'inline-flex',

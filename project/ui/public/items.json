@@ -3,6 +3,11 @@
     "id": 11,
     "title": "Timeline",
     "category": "Project",
+    "categoryColor" : "#00ff00",
+    "parents": {
+      "1": "Career Development",
+      "2": "Personal Tools"
+    },
     "note": "A tool to showcase your work",
     "desc": "Created a local-app to showcase a history of achivements including projects, skills and events in form of nested cards with timeline updating for each card upon scroll.",
     "date": "1 Sep, 25",

@@ -13,7 +13,7 @@ export default function App() {
 
   return (
     <>
-      <IntroAnimation />
+      {/* <IntroAnimation /> */}
       <Box sx={{
         minHeight: '100vh',
         display: 'flex',
