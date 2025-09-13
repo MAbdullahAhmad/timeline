@@ -1,14 +1,21 @@
 import React from 'react';
 import { Box } from '@mui/material';
+import { useNavigate, Link } from 'react-router-dom';
 import Pill from '../Pill/Pill.jsx';
 
 export default function ParentsBreadcrumb({ parents = {} }) {
+  // const navigate = useNavigate();
   const entries = Object.entries(parents);
+
+  
+
   return (
     <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
       {entries.map(([id, name], i) => (
         <React.Fragment key={id}>
-          <Pill label={name} />
+          <Link to={`/app/${id}`}>
+            <Pill label={name} />
+          </Link>
           {i < entries.length - 1 && (
             <Box
               sx={{
