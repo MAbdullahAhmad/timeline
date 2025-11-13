@@ -83,7 +83,7 @@ case "${method_choice:-1}" in
   *) DATA_METHOD="json" ;;
 esac
 
-API_BASE_DEFAULT="http://127.0.0.1:4000/api"
+API_BASE_DEFAULT="http://127.0.0.1:8000/api"
 read -rp "[install] API base URL [$API_BASE_DEFAULT]: " api_base_input
 API_BASE="${api_base_input:-$API_BASE_DEFAULT}"
 API_PORT=$(python3 - "$API_BASE" <<'PY'
