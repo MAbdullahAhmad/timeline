@@ -1,0 +1,473 @@
+[
+  {
+    "id": 32,
+    "title": "PHP+SQL Backend",
+    "category": "Skillset",
+    "categoryColor" : "#ffffff",
+    "note": "Learnt Basic Backend Development Skills",
+    "img": "/uploads/images/php-mysql.png",
+    "img_link": "https://youtu.be/agIIxc9gry0?si=Wnfrd1S-KNz5RYZa",
+    "desc": "Studied PHP and SQL.",
+    "date": "14 Oct 2019",
+    "level": 0,
+    "children": [33]
+  },
+  {
+    "id": 1,
+    "title": "Basic Frontend",
+    "category": "Skillset",
+    "categoryColor" : "#ffffff",
+    "note": "Learnt Basic Frontend Development Skills",
+    "img": "/uploads/images/fe-dev.png",
+    "desc": "Studied HTML, CSS, JS, JQuery, Bootstrap3. Practiced in a few projects. And earned a few certificates. Expande below to learn more.",
+    "date": "31 Jul 2019",
+    "level": 0,
+    "children": [4, 3, 2]
+  },
+  {
+    "id": 5,
+    "title": "Basic Programming Skills",
+    "category": "Skillset",
+    "categoryColor" : "#ffffff",
+    "note": "Learnt Basic Programming Languages",
+    "img": "/uploads/images/c-cpp-java-py.png",
+    "desc": "Studied C, C++, Python, Java. Played with Processing.org sketchbook and developed some projects wortk acknowledgment.",
+    "date": "27 Jul 2019",
+    "level": 0,
+    "children": [7, 11, 8]
+  },
+  {
+    "id": 6,
+    "title": "IoT - Arduino Playground",
+    "category": "Skillset",
+    "categoryColor" : "#ffffff",
+    "note": "Made projects with Arduino.",
+    "img": "/uploads/images/arduino-modules.png",
+    "desc": "During my early education, I made some projects with Arduino microcontrollers for fun. Later they became my reason for selecting software engineering career.",
+    "date": "15 Feb 2019",
+    "level": 0,
+    "children": [27, 26, 25, 24, 23, 22, 21, 17]
+  },
+
+
+  {
+    "id": 33,
+    "title": "Invoice Generator",
+    "category": "Task",
+    "categoryColor" : "#ffffff",
+    "img": "/uploads/images/invoice-generator.png",
+    "img_link": "https://youtu.be/78SD6Li523k?si=p0cD7UEQ2vFJsgiF",
+    "note": "Developed MySQL database web application with PHP and Xampp MySQL.",
+    "desc": "Skillset: PHP, HTML, CSS, JS, JQuery, SQL. Generates printable invoice and keeps track of history. Click video to watch demo.",
+    "date": "14 Oct 2019",
+    "level": 1,
+    "parents": {
+      "32": "PHP+SQL Backend"
+    }
+  },
+  {
+    "id": 4,
+    "title": "D1 - My Second Webpage Design",
+    "category": "Skillset",
+    "categoryColor" : "#ffffff",
+    "note": "Developed second webpage design.",
+    "img": "/uploads/images/d1-webpage.png",
+    "img_link": "https://youtu.be/78SD6Li523k?si=p0cD7UEQ2vFJsgiF",
+    "desc": "Made second webpage design. Practiced paralyx, flex and box-model. Click image to watch video.",
+    "date": "27 Oct 2019",
+    "level": 1,
+    "parents": {
+      "1": "Basic Frontend"
+    }
+  },
+  {
+    "id": 3,
+    "title": "HTML - Certificate",
+    "category": "Skillset",
+    "categoryColor" : "#ffffff",
+    "note": "Earned HTML Certificate",
+    "img": "/uploads/images/html-certificate.png",
+    "img_link": "https://www.sololearn.com/certificates/CT-R05HTXOZ",
+    "desc": "Learnt standards and terminologies from an online HTML course. Completed upto a verifiable certificate. Click on certificate to verify.",
+    "date": "31 Jul 2019",
+    "level": 1,
+    "parents": {
+      "1": "Basic Frontend"
+    }
+  },
+  {
+    "id": 2,
+    "title": "Codex - My First Webpage Design",
+    "category": "Task",
+    "categoryColor" : "#ffffff",
+    "note": "Developed first webpage design.",
+    "img": "/uploads/images/codex-first-webpage.png",
+    "img_link": "https://youtu.be/3L_ltFz9KNU?si=K-SlXPbl5yXFNnlp",
+    "desc": "Made a webpage using HTML, CSS and JS. Watch video for more deails.",
+    "date": "24 May 2019",
+    "level": 1,
+    "parents": {
+      "1": "Basic Frontend"
+    }
+  },
+  {
+    "id": 8,
+    "title": "C/C++ Programming",
+    "category": "Skillset",
+    "categoryColor" : "#ffffff",
+    "desc": "Studied C and C++ concepts, developed some projects.",
+    "date": "27 Apr 2019",
+    "level": 1,
+    "parents": {
+      "5": "Basic Programming Skills"
+    },
+    "children": [28]
+  },
+  {
+    "id": 11,
+    "title": "Python Programming",
+    "category": "Skillset",
+    "categoryColor" : "#ffffff",
+    "desc": "Studied python and practiced tasks and short-projects.",
+    "date": "22 May 2019",
+    "level": 1,
+    "parents": {
+      "5": "Basic Programming Skills"
+    },
+    "children": [10, 20, 30, 31, 29, 19]
+  },
+  {
+    "id": 7,
+    "title": "Processing.org - Software Sketchbook",
+    "category": "Skillset",
+    "categoryColor" : "#ffffff",
+    "note": "I studied and made fun projects in Processing Sketchbook.",
+    "img": "/uploads/images/processing-org.png",
+    "img_link": "https://processing.org",
+    "desc": "Practiced programming skills and developed some games with processing.org using i3, p5.js in programming languages: C++, Java, Python.",
+    "date": "27 Jul 2019",
+    "level": 1,
+    "parents": {
+      "5": "Basic Programming Skills"
+    },
+    "children": [14, 13, 12, 18, 16, 15]
+  },
+  {
+    "id": 27,
+    "title": "Line-Following Robot",
+    "category": "Task",
+    "categoryColor" : "#ffffff",
+    "note": "Line-Following Robot",
+    "desc": "A line-following robot that goes from one room to another and back to first when its button is pressed. Space to hold a glass and lightweight items.",
+    "date": "01 May 2019",
+    "level": 1,
+    "parents": {
+      "6": "IoT - Arduino Playground"
+    }
+  },
+  {
+    "id": 26,
+    "title": "Digital Pin Door Lock",
+    "category": "Task",
+    "categoryColor" : "#ffffff",
+    "note": "Numpad and Servo based Door Lock",
+    "desc": "Created a door lock with a digital pin passcode entered via Numpad module and a servo to pull the string that opens door.",
+    "date": "01 Apr 2019",
+    "level": 1,
+    "parents": {
+      "6": "IoT - Arduino Playground"
+    }
+  },
+  {
+    "id": 25,
+    "title": "Wall Following Bot",
+    "category": "Task",
+    "categoryColor" : "#ffffff",
+    "note": "Ultrasonic wall-following Robot",
+    "desc": "Created a wall following robot using Ultrasonic module with a servo.",
+    "date": "01 Mar 2019",
+    "level": 1,
+    "parents": {
+      "6": "IoT - Arduino Playground"
+    }
+  },
+  {
+    "id": 24,
+    "title": "Temp & Humidity Sensing",
+    "category": "Task",
+    "categoryColor" : "#ffffff",
+    "img": "/uploads/images/arduino-temp.png",
+    "img_link": "https://youtu.be/YT_FTCMMtvQ?si=qZz1WwVIbx4l1MiC",
+    "desc": "Programmed some tinker projects with Arduino Temprature and Humidity Sensor Module.",
+    "date": "22 Feb 2019",
+    "level": 1,
+    "parents": {
+      "6": "IoT - Arduino Playground"
+    }
+  },
+  {
+    "id": 23,
+    "title": "IR Transmittor Receiver",
+    "category": "Task",
+    "categoryColor" : "#ffffff",
+    "img": "/uploads/images/arduino-ir.png",
+    "img_link": "https://youtu.be/SqPKNCsuyMY?si=1uduJSchGD5vr-Vw",
+    "desc": "Programmed some tinker projects with Arduino IR Transmittor & Receiver Module.",
+    "date": "21 Feb 2019",
+    "level": 1,
+    "parents": {
+      "6": "IoT - Arduino Playground"
+    }
+  },
+  {
+    "id": 22,
+    "title": "WiFi Module",
+    "category": "Task",
+    "categoryColor" : "#ffffff",
+    "img": "/uploads/images/arduino-wifi.png",
+    "img_link": "https://youtu.be/YiAqlHPJEf0?si=JvdMjyJ1xuCiDZ3s",
+    "desc": "Programmed some tinker projects with Arduino WiFi Module.",
+    "date": "20 Feb 2019",
+    "level": 1,
+    "parents": {
+      "6": "IoT - Arduino Playground"
+    }
+  },
+  {
+    "id": 21,
+    "title": "Relay Module",
+    "category": "Task",
+    "categoryColor" : "#ffffff",
+    "img": "/uploads/images/arduino-relay-module.png",
+    "img_link": "https://youtu.be/nmj3-YdAOqM?si=nwy2PRGgQpbYuhQ0",
+    "desc": "Programmed some tinker projects with Arduino Relay Module.",
+    "date": "19 Feb 2019",
+    "level": 1,
+    "parents": {
+      "6": "IoT - Arduino Playground"
+    }
+  },
+  {
+    "id": 17,
+    "title": "Button Press - Interval Detector",
+    "category": "Task",
+    "categoryColor" : "#ffffff",
+    "img": "/uploads/images/arduino-button-interval.png",
+    "img_link": "https://youtu.be/tsDzaF76rIo?si=yY3j0SNDCPaMAgDA",
+    "note": "Press pushbutton and detect time difference..",
+    "desc": "Click image to watch video.",
+    "date": "15 Feb 2019",
+    "level": 1,
+    "parents": {
+      "6": "IoT - Arduino Playground"
+    }
+  },
+  {
+    "id": 28,
+    "title": "ATM Simulator",
+    "category": "Task",
+    "categoryColor" : "#ffffff",
+    "img": "/uploads/images/atm-simulator.png",
+    "img_link": "https://youtu.be/bok1nS1WUCE?si=ieLxAnR-LxAa_IZz",
+    "note": "ATM Simulator in C++, simulates card ~> pin ~> withdraw, deposit, check balance ~> receipt.",
+    "desc": "It is a C++ proejct that maintains its records in a text file for user balance and others. I collaborated with a friend. Click to watch video",
+    "date": "27 Apr 2019",
+    "level": 2,
+    "parents": {
+      "5": "Basic Programming Skills",
+      "8": "C/C++ Programming"
+    }
+  },
+  {
+    "id": 10,
+    "title": "Qurbani App - Desktop App",
+    "category": "Task",
+    "categoryColor" : "#ffffff",
+    "img": "/uploads/images/qurbani-app.png",
+    "img_link": "https://youtu.be/AttFaZTN-YY?si=idSzrtJQlC-QNzkZ",
+    "note": "A single-file Tkinter-based desktop-app with 2 CRUDs and MySQL database.",
+    "desc": "Qurbani app is a Tkinter (python) based desktop application that allows a butcher manage their customers. It has two cruds for Nigrans (managers) and Qurbanis (Orders). It allows user to perform CRUDs on both records using mysql database Queries. It is using a MariaDB (xampp) server for database.",
+    "date": "12 Aug 2019",
+    "level": 2,
+    "parents": {
+      "5": "Basic Programming Skills",
+      "11": "Python Programming"
+    }
+  },
+  {
+    "id": 20,
+    "title": "Desktop App to Manage Records",
+    "category": "Task",
+    "categoryColor" : "#ffffff",
+    "img": "/uploads/images/py-records-app.png",
+    "img_link": "https://youtu.be/m_R652Hmp7E?si=fpVlfMJXiFrpCSWR",
+    "note": "Developed Organization and Employees Records Management Desktop App using Tkinter and MySQL",
+    "desc": "click image to watch demo.",
+    "date": "27 Jun 2019",
+    "level": 2,
+    "parents": {
+      "5": "Basic Programming Skills",
+      "11": "Python Programming"
+    }
+  },
+  {
+    "id": 30,
+    "title": "Dino Game",
+    "category": "Task",
+    "categoryColor" : "#ffffff",
+    "img": "/uploads/images/py-dino.png",
+    "img_link": "https://youtu.be/ybcAWnN4g58?si=2BCE9I9YRFq8HdaG",
+    "note": "A chrome-like dino game",
+    "desc": "Developed a game with boxes with same logic as that of Google Chrome browser's offline mode dino game. Used Tkinter's Canvas for shapes and frames. Click video to watch demo",
+    "date": "21 Jun 2019",
+    "level": 2,
+    "parents": {
+      "5": "Basic Programming Skills",
+      "11": "Python Programming"
+    }
+  },
+  {
+    "id": 31,
+    "title": "Restourant POS",
+    "category": "Task",
+    "categoryColor" : "#ffffff",
+    "img": "/uploads/images/py-pos.png",
+    "img_link": "https://youtu.be/yaJUgFJ2pkE?si=s20S5lVu1mFeck1y",
+    "note": "A POS App to calculate bill",
+    "desc": "Developed Tkinter based python POS App. Click video to watch demo.",
+    "date": "03 Jun 2019",
+    "level": 2,
+    "parents": {
+      "5": "Basic Programming Skills",
+      "11": "Python Programming"
+    }
+  },
+  {
+    "id": 19,
+    "title": "Calculator using Tkinter",
+    "category": "Task",
+    "categoryColor" : "#ffffff",
+    "img": "/uploads/images/tk-calculator.png",
+    "img_link": "https://youtu.be/AttFaZTN-YY?si=idSzrtJQlC-QNzkZ",
+    "note": "A desktop calculator app using GridLayout in Tkinter",
+    "desc": "click video to watch demo.",
+    "date": "22 May 2019",
+    "level": 2,
+    "parents": {
+      "5": "Basic Programming Skills",
+      "11": "Python Programming"
+    }
+  },
+  {
+    "id": 29,
+    "title": "Sleep Time Analyzer",
+    "category": "Task",
+    "categoryColor" : "#ffffff",
+    "img": "/uploads/images/sleep-time-analyzer.png",
+    "img_link": "https://youtu.be/MeL4S3ikbKI?si=Lq_UIb51UTLJVJDz",
+    "note": "A desktop Tkinter app to monitor your sleep time and show analytics as a bar chart",
+    "desc": "click video to watch demo.",
+    "date": "23 May 2019",
+    "level": 2,
+    "parents": {
+      "5": "Basic Programming Skills",
+      "11": "Python Programming"
+    }
+  },
+  {
+    "id": 14,
+    "title": "Game: Bounce Game",
+    "category": "Task",
+    "categoryColor" : "#ffffff",
+    "img": "/uploads/images/bounce-game.png",
+    "img_link": "https://youtu.be/bO6oBYrThj4?si=6bKibpCgE8MF_bwJ",
+    "note": "Developed Nokia's bounce-like mini game.",
+    "desc": "Developed a game with basic shapes. Programmed logic for gravity, bouncy and acceleration of object using Python in Processnig 3. Created exports for both Desktop and Andrid. Click image to watch demo video.",
+    "date": "24 Jul 2019",
+    "level": 2,
+    "parents": {
+      "5": "Basic Programming Skills",
+      "7": "Processing.org - Software Sketchbook"
+    }
+  },
+  {
+    "id": 13,
+    "title": "Game: Dino Game",
+    "category": "Task",
+    "categoryColor" : "#ffffff",
+    "img": "/uploads/images/dino-game.png",
+    "img_link": "https://youtu.be/NFhR2174Z0M?si=6W4Tl0inoHlwVhKW",
+    "note": "Developed chrome-like dino game.",
+    "desc": "Developed a game with boxes with same logic as that of Google Chrome browser's offline mode dino game. Used Processing 3 Java language. Exported builds for both android (APK) and Desktop. Click image to watch video demo",
+    "date": "5 Jul 2019",
+    "level": 2,
+    "parents": {
+      "5": "Basic Programming Skills",
+      "7": "Processing.org - Software Sketchbook"
+    }
+  },
+  {
+    "id": 12,
+    "title": "Calculator - Desktop App",
+    "category": "Task",
+    "categoryColor" : "#ffffff",
+    "img": "/uploads/images/processing-calculator.png",
+    "img_link": "https://youtu.be/iTt8Qm4tHFY?si=Dt5bEpBfhunT3HjO",
+    "note": "Developed a Basic Calculator",
+    "desc": "A calculator UI with event that performs basic arithmetic operations using events. using Java language (Processing.org's Java language is more like C++).",
+    "date": "22 Jun 2019",
+    "level": 2,
+    "parents": {
+      "5": "Basic Programming Skills",
+      "7": "Processing.org - Software Sketchbook"
+    }
+  },
+  {
+    "id": 18,
+    "title": "UI: Button Design",
+    "category": "Task",
+    "categoryColor" : "#ffffff",
+    "img": "/uploads/images/button-design.png",
+    "img_link": "https://youtu.be/cW4aAMUgMzU?si=w2vzPa9BezAyfNUd",
+    "note": "An interactive button with on-hover and on-click effects.",
+    "desc": "Designed a button in Processing 3 Java that has hover and click transitions to make it interactive. Click to watch video demo.",
+    "date": "19 Apr 2019",
+    "level": 2,
+    "parents": {
+      "5": "Basic Programming Skills",
+      "7": "Processing.org - Software Sketchbook"
+    }
+  },
+  {
+    "id": 16,
+    "title": "Game: Tank Attack (2 Player)",
+    "category": "Task",
+    "categoryColor" : "#ffffff",
+    "img": "/uploads/images/mini-game-2.png",
+    "img_link": "https://youtu.be/Lqj_oAUQavQ?si=ghrVgyIXN-2k_ytm",
+    "note": "Developed A tank-attack mini game.",
+    "desc": "Developed a game. Programmed logic for heating weapon, short random displacement of weapon for difficulity, health calculation, scoring and restart using Java in Processnig 3. Click to watch demo video.",
+    "date": "16 Apr 2019",
+    "level": 2,
+    "parents": {
+      "5": "Basic Programming Skills",
+      "7": "Processing.org - Software Sketchbook"
+    }
+  },
+  {
+    "id": 15,
+    "title": "Game: Space Fight (2 Player)",
+    "category": "Task",
+    "categoryColor" : "#ffffff",
+    "img": "/uploads/images/mini-game.png",
+    "img_link": "https://www.youtube.com/watch?v=mDhJkZqgWa8",
+    "note": "Developed A space-fight like mini game.",
+    "desc": "Developed a game. Programmed logic for gravity, two players, scoring and shapes using Java in Processnig 3. Click to watch demo video.",
+    "date": "16 Apr 2019",
+    "level": 2,
+    "parents": {
+      "5": "Basic Programming Skills",
+      "7": "Processing.org - Software Sketchbook"
+    }
+  }
+]

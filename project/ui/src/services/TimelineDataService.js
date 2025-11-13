@@ -4,6 +4,12 @@ import XLSXDataService from "./XLSXDataService.js";
 import URLDataService from "./URLDataService.js";
 import GoogleSheetsDataService from "./GoogleSheetsDataService.js";
 import GoogleDriveDataService from "./GoogleDriveDataService.js";
+import APIDataService from "./APIDataService.js";
+import {
+  ensureRuntimeEnvLoaded,
+  getClientEnvVar,
+  getBuildEnvVar,
+} from "@/config/runtimeEnv";
 
 class TimelineDataService {
   
@@ -18,11 +24,14 @@ class TimelineDataService {
       url: new URLDataService(),
       sheets: new GoogleSheetsDataService(),
       drive: new GoogleDriveDataService(),
+      api: new APIDataService(),
     };
 
-    this.method = this._resolve_method(method);
-    // console.log("Method", this.method);
+    this.explicitMethod = this._normalize_method_name(method);
+    this.method = null;
     this.provider = null;
+    this.methodResolved = false;
+    this.methodSource = null;
   }
 
   /**
@@ -31,22 +40,25 @@ class TimelineDataService {
 
   // Initialize
   async init() {
+    if (this.provider) return;
 
-    if (this.method && this.providers[this.method]) {
-      this.provider = this.providers[this.method];
-      const check = await this.provider.check();
-      // console.log("Provider check", check);
-      return;
+    const preferred = await this._resolve_method();
+    if (preferred && this.providers[preferred]) {
+      const candidate = this.providers[preferred];
+      if (candidate && (await candidate.check?.())) {
+        this.provider = candidate;
+        this.method = preferred;
+        return;
+      }
     }
 
-    // Fallback: probe providers
-    const order = ["json", "csv", "xlsx", "url", "sheets", "drive"];
+    const order = ["json", "csv", "excel", "url", "sheets", "drive", "api"];
     for (const key of order) {
+      if (key === preferred) continue;
       const p = this.providers[key];
       if (p && (await p.check?.())) {
         this.provider = p;
         this.method = key;
-        // console.log("Method", this.method);
         return;
       }
     }
@@ -55,22 +67,56 @@ class TimelineDataService {
     if (typeof window !== "undefined") alert("No data source available.");
   }
 
-  _resolve_method(arg) {
-    // 1. Argument
-    if (arg) return String(arg).toLowerCase();
+  async _resolve_method(arg) {
+    if (this.methodResolved) return this.method;
+    this.methodResolved = true;
 
-    // 2. URL Search Params
-    if (typeof window !== "undefined") {
-      const q = (new URLSearchParams(window.location.search)).get('method');
-      if (q) return String(q).toLowerCase();
+    const fromArg = this._normalize_method_name(arg ?? this.explicitMethod);
+    if (fromArg) {
+      this.method = fromArg;
+      this.methodSource = "argument";
+      return this.method;
     }
 
-    // 3. Environment Variable
-    const env = import.meta?.env?.VITE_TIMELINE_DATA_METHOD;
-    if(env) return String(env).toLowerCase()
-      
-    // 4. None (Fallback in this.init)
+    await ensureRuntimeEnvLoaded();
+    const clientMethod = this._normalize_method_name(
+      getClientEnvVar("VITE_TIMELINE_DATA_METHOD")
+    );
+    if (clientMethod) {
+      this.method = clientMethod;
+      this.methodSource = "client-env";
+      return this.method;
+    }
+
+    const buildMethod = this._normalize_method_name(
+      getBuildEnvVar("VITE_TIMELINE_DATA_METHOD")
+    );
+    if (buildMethod) {
+      this.method = buildMethod;
+      this.methodSource = "build-env";
+      return this.method;
+    }
+
+    if (typeof window !== "undefined") {
+      const q = new URLSearchParams(window.location.search).get("method");
+      const fromQuery = this._normalize_method_name(q);
+      if (fromQuery) {
+        this.method = fromQuery;
+        this.methodSource = "query";
+        return this.method;
+      }
+    }
+
+    this.method = null;
+    this.methodSource = null;
     return null;
+  }
+
+  _normalize_method_name(value) {
+    if (!value) return null;
+    const normalized = String(value).toLowerCase();
+    if (normalized === "xlsx") return "excel";
+    return normalized;
   }
 
   /**

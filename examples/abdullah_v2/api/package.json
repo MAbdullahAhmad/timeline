@@ -1,0 +1,17 @@
+{
+  "name": "timeline-api",
+  "version": "0.1.0",
+  "description": "Express API server for Timeline application",
+  "type": "module",
+  "scripts": {
+    "dev": "NODE_ENV=development node src/server.js",
+    "start": "NODE_ENV=production node src/server.js",
+    "db:migrate": "node scripts/run-migrations.js",
+    "db:seed": "node scripts/run-seeders.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.19.2",
+    "mysql2": "^3.11.3"
+  }
+}
