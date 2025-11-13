@@ -14,7 +14,13 @@ Showcase achievements, milestones, and nested project history with a dark-themed
 
 ## Quick Install
 
-Copy the contents of [`scripts/install.bash`](scripts/install.bash), paste into any terminal, and press **Enter**. It grabs the latest build, asks which data method you want, and drops helper scripts so you can run the API/UI immediately. See [`docs/README.md`](docs/README.md) for the full breakdown of what the installer does.
+```bash
+wget https://github.com/MAbdullahAhmad/timeline/releases/download/v1.0.0/install.bash
+chmod +x install.bash
+./install.bash
+```
+
+The installer downloads the latest bundle, prompts for the data source (json/csv/excel/url/sheets/drive/api), and emits ready-to-run `api/`, `db/`, and built `ui/` directories with helper scripts. See [`docs/README.md`](docs/README.md) for the detailed breakdown.
 
 
 ## Data providers
