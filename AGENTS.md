@@ -30,6 +30,7 @@ Guidance for AI agents and contributors working in this repository. Follow these
 - Production build: `npm run build` (outputs to `project/ui/dist`)
 - To preview a build: `npm run preview` or serve `dist/` statically (e.g., `npx serve -s dist`).
 - Example snapshot: `examples/abdullah/ui` contains a ready‑to‑serve static example; you can run `npx serve -s .` inside that folder to view it. There is no root‑level `build/` directory.
+- Automated bootstrap: `scripts/install.bash` downloads a fresh copy into `./tmp`, builds the UI, prompts for a data method (`json/csv/excel/url/sheets/drive/api`), trims unused sample files, writes matching `.env` values (including `VITE_TIMELINE_API_BASE`), and emits helper scripts (`setup.bash`, `run-api.bash`, `run-ui.bash`). Prefer this when you need a clean environment or want to share a turnkey bundle.
 
 ## Data Sources (Timeline items)
 
@@ -39,6 +40,7 @@ Guidance for AI agents and contributors working in this repository. Follow these
   - URL indirection: `/items.url` (points to public `.json/.csv/.xlsx`)
   - Google Sheets (public link) via `/sheets.json` (CSV or GViz)
   - Google Drive (public) via `/drive.json`
+- When the API provider is used, keep `VITE_TIMELINE_BASIC_AUTH_USER/PASS` (UI) and `BASIC_AUTH_USER/PASS` (`project/api/.env`) in sync so API requests include the required Authorization header.
 - Place local files under `project/ui/public/`.
 - Do not break backwards compatibility in parsing: `children` may be JSON array, `a|b|c` string, or quoted comma string; IDs are strings; `level` is numeric.
 - Provider priority (if not overridden): json → csv → xlsx → url → sheets → drive.
