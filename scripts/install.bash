@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-REPO_ZIP_URL="https://github.com/MAbdullahAhmad/timeline/archive/refs/heads/main.zip"
+REPO_ZIP_URL="https://github.com/MAbdullahAhmad/timeline/releases/download/v1.0.0/project.zip"
 CWD="$(pwd)"
 TMP_DIR="$CWD/tmp"
 OUTPUT_DEFAULT="$CWD/timeline-bundle"
